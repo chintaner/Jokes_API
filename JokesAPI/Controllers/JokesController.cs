@@ -89,6 +89,7 @@ namespace JokesAPI.Controllers
             var jokeList = jokes.ToList();
 
             jokeList.Add(joke);
+            jokeList.Reverse();
             await _storage.Save(jokeList, FILENAME);
             return joke;
         }
